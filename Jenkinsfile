@@ -6,17 +6,17 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-                git branch: 'main', url: 'https://github.com/WorkshopsByKhaja/saleor-dashboard.git'
+                git branch: 'main', url: 'https://github.com/krishna5683akp/saleor-dashboard.git'
             }
         }
         stage('docker image build') {
             steps {
-                sh 'docker image build -t shaikkhajaibrahim/saleor-dashboar:DEV .'
+                sh 'docker image build -t madasu/saleor-dashboar:DEV .'
             }
         }
         stage('push image to registry') {
             steps {
-                sh 'docker image push shaikkhajaibrahim/saleor-dashboar:DEV'
+                sh 'docker image push madasu/saleor-dashboar:DEV'
             }
         }
     }
